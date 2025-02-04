@@ -25,12 +25,11 @@ def calculate_net_salary(gross_salary):
         net_salaries.append(net_salary)
         annual_income += gross_salary
 
-        # Получаем корневую директорию проекта
-    root_dir = os.path.abspath(os.path.dirname(__file__))  # __file__ указывает на путь текущего файла
-    root_dir = os.path.dirname(root_dir)  # Поднимаемся на один уровень выше (к корню проекта)
+    # Получаем текущую рабочую директорию (ту, где скрипт запускается)
+    root_dir = os.getcwd()  # Это будет корень, где запускается скрипт (или .pyz)
 
     # Папка для сохранения файла будет в корне проекта
-    output_folder = os.path.join(root_dir, "files")  # Путь к папке 'files' в корне проекта
+    output_folder = os.path.join(root_dir, "files")
 
     # Создаем папку, если она не существует
     if not os.path.exists(output_folder):
