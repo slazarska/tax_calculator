@@ -23,7 +23,7 @@
 5. Должна отобразиться версия Python.
     
 #### Запуск проекта через pyz архив
-1. Скачайте файл tax_calculator.pyz (например, с вашего сайта или хранилища).
+1. Скачайте файл <a target="_blank" href="https://github.com/slazarska/tax_calculator/blob/main/tax_calculator.pyz">tax_calculator.pyz</a><br/>.
 2. Перейдите в папку, где вы сохранили .pyz файл.
 3. Запустите программу через командную строку:
 на Windows:
