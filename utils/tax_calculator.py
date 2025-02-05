@@ -25,35 +25,28 @@ def calculate_net_salary(gross_salary):
         net_salaries.append(net_salary)
         annual_income += gross_salary
 
-    # Получаем текущую рабочую директорию (ту, где скрипт запускается)
-    root_dir = os.getcwd()  # Это будет корень, где запускается скрипт (или .pyz)
+    root_dir = os.getcwd()
 
-    # Папка для сохранения файла будет в корне проекта
     output_folder = os.path.join(root_dir, "files")
 
-    # Создаем папку, если она не существует
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
     file_path = os.path.join(output_folder, "net_salaries.xlsx")
 
-    # Создание Excel файла
     wb = openpyxl.Workbook()
     sheet = wb.active
     sheet.title = "Зарплата"
 
-    # Заполнение заголовков
     sheet['A1'] = 'Месяц'
     sheet['B1'] = 'Зарплата на руки'
 
-    # Заполнение данными
     for i, net_salary in enumerate(net_salaries):
         sheet[f'A{i + 2}'] = months[i]  # Название месяца
         sheet[f'B{i + 2}'] = f'{net_salary:.2f} руб.'  # Зарплата с точностью до двух знаков
 
-    # Сохранение файла
     wb.save(file_path)
 
-    # Вывод пути к файлу
     print(f"\nФайл net_salaries.xlsx сохранён в папке {os.path.abspath(output_folder)}\n")
+
     return net_salaries, months
