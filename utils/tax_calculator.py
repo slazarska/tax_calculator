@@ -42,8 +42,7 @@ def calculate_net_salaries(gross_salary: float, start_month_index: int, initial_
 
 
 def save_to_excel(data: List[Tuple[str, float]], filename: str = None) -> str:
-    """
-    Сохраняет данные в Excel файл."""
+    """Сохраняет данные в Excel файл."""
     if filename is None:
         filename = DEFAULT_FILENAME
 
