@@ -1,6 +1,7 @@
-from utils.tax_calculator import calculate_net_salary, calculate_taxed_salary, print_and_save_results, \
-    find_gross_salary_for_target_net
 from data.months import months
+from utils.tax_calculator import calculate_taxed_salary, print_and_save_results, \
+    find_gross_salary_for_target_net
+
 
 def main():
     user_mode = input("Выберите режим: \n1 — ввести зарплату до вычета\n2 — ввести желаемую зарплату на руки\nВаш выбор (1/2): ")

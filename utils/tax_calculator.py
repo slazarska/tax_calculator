@@ -29,7 +29,6 @@ def calculate_net_salary(gross_salary, start_month_index):
         month_name = months[i]
         print(f"{month_name}: {net_salary:.2f} руб.")
 
-    # Сохраняем в Excel
     root_dir = os.getcwd()
     output_folder = os.path.join(root_dir, "files")
 
@@ -85,7 +84,6 @@ def print_and_save_results(net_salaries, filename_suffix=""):
     for month, salary in net_salaries:
         print(f"{month}: {salary:.2f} руб.")
 
-    # Сохранение в файл Excel
     root_dir = os.getcwd()
     output_folder = os.path.join(root_dir, "files")
 
@@ -111,9 +109,9 @@ def print_and_save_results(net_salaries, filename_suffix=""):
 
 def find_gross_salary_for_target_net(target_net, start_month_index):
     low = target_net
-    high = target_net * 2  # Предполагаем, что налоги не больше 50%
+    high = target_net * 2
 
-    for _ in range(100):  # Двоичный поиск
+    for _ in range(100):
         mid = (low + high) / 2
         net_salaries = calculate_taxed_salary(mid, start_month_index)
         avg_net = sum(s for _, s in net_salaries) / len(net_salaries)
