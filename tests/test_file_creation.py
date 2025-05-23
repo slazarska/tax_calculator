@@ -5,10 +5,8 @@ from utils.tax_calculator import calculate_net_salary
 
 @pytest.fixture
 def setup_and_teardown():
-    root_dir = os.path.abspath(os.path.dirname(__file__))
-    root_dir = os.path.dirname(root_dir)
-
-    output_folder = os.path.join(root_dir, "files")
+    test_dir = os.path.dirname(__file__)
+    output_folder = os.path.join(test_dir, "files")
     file_path = os.path.join(output_folder, "net_salaries.xlsx")
 
     # Удаляем файл перед тестом
@@ -25,7 +23,7 @@ def test_excel_file_creation(setup_and_teardown):
     file_path = setup_and_teardown
 
     #TODO random test date
-    calculate_net_salary(100000)
+    calculate_net_salary(100000, 0)
     #TODO soft-assert
     assert os.path.exists(file_path), "Excel файл не был создан!"
 
